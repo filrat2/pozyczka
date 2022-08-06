@@ -1,4 +1,4 @@
-def wielkosc_zadluzenia(kwota_poczatkowa, wartosc_oprocentowania, wartosc_raty = 200):
+def wielkosc_zadluzenia(kwota_poczatkowa, wartosc_oprocentowania, wartosc_raty):
     if type(kwota_poczatkowa) != int and type(kwota_poczatkowa) != float:
         print("Kwota początkowa kredytu musi być liczbą.")
     elif kwota_poczatkowa <= 0:
@@ -13,13 +13,8 @@ def wielkosc_zadluzenia(kwota_poczatkowa, wartosc_oprocentowania, wartosc_raty =
         wielkosc_zadluzenia_zmienna = (1 + ((wartosc_oprocentowania + 3) / 12000)) * kwota_poczatkowa - wartosc_raty
         print(wielkosc_zadluzenia_zmienna)
 
-wielkosc_zadluzenia(11804.59282, -0.453509101)
+kwota_poczatkowa = float(input("Wprowadź kwotę początkową kredytu: "))
+wartosc_oprocentowania = float(input("Wprowadź wartość oprocentowania: "))
+wartosc_raty = float(input("Wprowadź wysokość raty kredytu: "))
 
-
-import pandas as pd
-data = pd.read_csv("Desktop/pierwszy_program_dane.csv") 
-data
-
-data.loc[1, 'pozyczka']
-
-
+variables_in_function = wielkosc_zadluzenia(kwota_poczatkowa, wartosc_oprocentowania, wartosc_raty)
